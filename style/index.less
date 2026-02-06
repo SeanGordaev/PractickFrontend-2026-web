@@ -1,0 +1,120 @@
+
+
+@gap: 0.5vh;
+body {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    gap: @gap;
+
+    background-color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+
+    header, footer {
+        background-color: aqua;
+    }
+
+    
+
+}
+
+@hdr: 10vh;
+@ftr: 10vh;
+@main: (100vh - (@hdr + @ftr + @gap * 2));
+
+
+header {
+    height: @hdr;
+}
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: aliceblue;
+    height: @main;
+
+    div {
+        position: relative;
+        font-size: 4vh;
+        transition: 
+                filter 0.5s ease-out,
+                transform 0.2s ease-out;
+        will-change: transform, filter;
+        text-align: center;
+
+        .context {
+            font-size: 1vh;
+            width: 100px;
+            border: 1px solid black;
+            padding: 10px; 
+            transform: scaleY(0);
+            transition: transform 0.4s ease-out;
+            transform-origin: top;
+            margin-bottom: 10px;
+            
+        }
+    }
+
+
+}
+
+main > div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(247, 59, 59);
+
+    transform: scaleX(0);
+    transition: transform 0.35s ease-out;
+    border-radius: 5px;
+
+    z-index: -1;
+}
+@keyframes BG {
+  from {background-color: rgb(247, 59, 59);}
+  to {background-color: rgb(178, 20, 20);}
+}
+
+main > div:hover {
+    transform: scale(1.5);
+    .context {
+        transform: scaleY(1);
+    }
+}
+
+main > div:hover::before {
+    transform: scaleX(1.2);
+    
+    animation-name: BG;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+main:has(div:hover) div {
+    filter: blur(5px);
+}
+
+main .W:hover {
+    filter: none;
+}
+main .W:hover .context {
+    filter: none;
+}
+
+
+
+main .A:hover {
+    filter: none;
+}
+main .H:hover {
+    filter: none;
+}
+
+
+
+
+footer {
+    height: @ftr;
+}
