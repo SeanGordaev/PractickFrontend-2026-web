@@ -20,7 +20,7 @@ body {
 }
 
 @hdr: 10vh;
-@ftr: 10vh;
+@ftr: 11vh;
 @main: (100vh - (@hdr + @ftr + @gap * 2));
 
 
@@ -37,7 +37,7 @@ main {
 
     div {
         position: relative;
-        font-size: 4vh;
+        font-size: 5vh;
         transition: 
                 filter 0.5s ease-out,
                 transform 0.2s ease-out;
@@ -45,18 +45,16 @@ main {
         text-align: center;
 
         .context {
-            font-size: 1vh;
+            position: absolute;
+            font-size: 1.5vh;
             width: 100px;
             border: 1px solid black;
             padding: 10px; 
             transform: scaleY(0);
             transition: transform 0.4s ease-out;
             transform-origin: top;
-            margin-bottom: 10px;
-            
         }
     }
-
 
 }
 
@@ -72,29 +70,32 @@ main > div::before {
 
     z-index: -1;
 }
+
 @keyframes BG {
   from {background-color: rgb(247, 59, 59);}
   to {background-color: rgb(178, 20, 20);}
 }
 
 main > div:hover {
-    transform: scale(1.5);
+    transform: scale(1.6);
     .context {
         transform: scaleY(1);
     }
 }
 
+
 main > div:hover::before {
     transform: scaleX(1.2);
-    
     animation-name: BG;
     animation-duration: 1s;
     animation-fill-mode: both;
 }
 
+
 main:has(div:hover) div {
     filter: blur(5px);
 }
+
 
 main .W:hover {
     filter: none;
@@ -103,12 +104,17 @@ main .W:hover .context {
     filter: none;
 }
 
-
-
 main .A:hover {
     filter: none;
 }
+main .A:hover .context {
+    filter: none;
+}
+
 main .H:hover {
+    filter: none;
+}
+main .H:hover .context {
     filter: none;
 }
 
