@@ -6,21 +6,16 @@ body {
     flex-direction: column;
     // justify-content: space-between;
     gap: @gap;
-
-    background-color: aliceblue;
+    color: white;
+    background-color: rgb(33, 34, 34);
     margin: 0px;
     padding: 0px;
-
-    header, footer {
-        background-color: aqua;
-    }
-
-    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
 @hdr: 10vh;
-@ftr: 11vh;
+@ftr: 12vh;
 @main: (100vh - (@hdr + @ftr + @gap * 2));
 
 
@@ -32,12 +27,11 @@ main {
     justify-content: space-evenly;
     align-items: center;
 
-    background-color: aliceblue;
     height: @main;
 
     div {
         position: relative;
-        font-size: 5vh;
+        font-size: 5.25vh;
         transition: 
                 filter 0.5s ease-out,
                 transform 0.2s ease-out;
