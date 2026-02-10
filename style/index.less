@@ -1,17 +1,15 @@
 
 
-@gap: 0.5vh;
+@gap: 10vh;
 body {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     gap: @gap;
     color: white;
     background-color: rgb(33, 34, 34);
     margin: 0px;
     padding: 0px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 @hdr: 10vh;
@@ -20,8 +18,30 @@ body {
 
 
 header {
-    height: @hdr;
+    min-height: @hdr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-out;
+    transform-origin: top;
+
+    h2 {
+        font-size: 50px;
+        margin: 0;
+        padding: 0;
+        
+    }
+    background-color: aqua;
+    transform: scaleY(1);
+
+    
 }
+
+header:hover {
+    transform: scaleY(1.1);
+}
+
 main {
     display: flex;
     justify-content: space-evenly;
@@ -111,8 +131,6 @@ main .H:hover {
 main .H:hover .context {
     filter: none;
 }
-
-
 
 
 footer {
