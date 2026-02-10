@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  gap: 0.5vh;
+  gap: 10vh;
   color: white;
   background-color: #212222;
   margin: 0px;
@@ -9,13 +9,29 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 header {
-  height: 10vh;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-out;
+  transform-origin: top;
+  background-color: aqua;
+  transform: scaleY(1);
+}
+header h2 {
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+header:hover {
+  transform: scaleY(1.1);
 }
 main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 77vh;
+  height: 58vh;
 }
 main div {
   position: relative;
